@@ -1,7 +1,7 @@
 # demonstrate "dlv debug", including build tags
 FROM golang:1.15.8-alpine AS dev
 RUN apk add --no-cache --update git
-RUN go get -u github.com/derekparker/delve/cmd/dlv
+RUN git clone https://github.com/go-delve/delve && cd delve && go install github.com/go-delve/delve/cmd/dlv
 WORKDIR /go/src/app
 COPY main.go .
 CMD [ "dlv", "--listen=:2345", "--headless", "--api-version=2", "--log", "--build-flags=-tags=mytag", "debug", "main.go", "--", "-multiplier", "2" ]

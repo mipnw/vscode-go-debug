@@ -8,3 +8,6 @@ Notes:
 - `make build-dev` then `make run` then set a breakpoint somewhere in the main function, then in VSCode run `Attach remote`. You can now step through the code with VSCode. This demo's `dlv debug`
 - Same, but with `make build` as the first step. This demo's `dlv exec`
 - Same, but with `make build-deploy` as the first step. This demo's `dlv exec` onto a container that doesn't even have source code.
+
+# References
+- https://github.com/golang/vscode-go/blob/master/docs/debugging.md#remote-debugging
